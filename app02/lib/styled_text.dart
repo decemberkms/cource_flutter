@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class StyledText extends StatelessWidget {
-  const StyledText({
-    super.key,
-  });
+  // const StyledText({
+  //   super.key,
+  // });
+
+  const StyledText({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
