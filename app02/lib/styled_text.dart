@@ -4,14 +4,14 @@ class StyledText extends StatelessWidget {
   // const StyledText({
   //   super.key,
   // });
-
-  const StyledText({key}) : super(key: key);
+  const StyledText(this.inputText, {super.key});
+  final String inputText;
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Hello world!",
-      style: TextStyle(
+    return Text(
+      inputText,
+      style: const TextStyle(
         fontSize: 28.0,
         color: Colors.white,
       ),
