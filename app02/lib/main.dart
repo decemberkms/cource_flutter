@@ -4,7 +4,7 @@ import 'package:app02/gradient_contrainer.dart';
 void main() {
   runApp(const MaterialApp(
     home: Scaffold(
-      body: GradientContainer(colors: [
+      body: GradientContainer([
         Color.fromARGB(255, 103, 58, 183),
         Color.fromARGB(255, 255, 255, 255)
       ]),
