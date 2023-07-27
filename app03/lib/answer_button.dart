@@ -21,7 +21,10 @@ class AnswerButton extends StatelessWidget {
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
         padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
       ),
-      child: Text(answerText),
+      child: Text(
+        answerText,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
