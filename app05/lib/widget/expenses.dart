@@ -1,6 +1,8 @@
+import 'package:app05/widget/new_expense.dart';
+import 'package:flutter/material.dart';
+
 import 'package:app05/widget/expenses_list.dart';
 import 'package:app05/model/expense.dart';
-import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -14,28 +16,36 @@ class Expenses extends StatefulWidget {
 class _Expenses extends State<Expenses> {
   final List<Expense> _registeredExpenses = [
     Expense(
-        title: 'flutter course',
-        amount: 19.99,
-        date: DateTime.now(),
-        category: Category.work),
+      title: 'flutter course',
+      amount: 19.99,
+      date: DateTime.now(),
+      category: Category.work,
+    ),
     Expense(
-        title: 'asian food',
-        amount: 88.12,
-        date: DateTime.now(),
-        category: Category.food)
+      title: 'asian food',
+      amount: 88.12,
+      date: DateTime.now(),
+      category: Category.food,
+    )
   ];
+
+  void _openAddExpenseOveraly() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const NewExpense(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Account Note"),
+        title: const Text("Account Note"),
         actions: [
           IconButton(
-              onPressed: () {
-                print("Hello?");
-              },
-              icon: const Icon(Icons.add))
+            onPressed: _openAddExpenseOveraly,
+            icon: const Icon(Icons.add),
+          ),
         ],
       ),
       body: Column(
