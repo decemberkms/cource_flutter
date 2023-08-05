@@ -28,6 +28,16 @@ class _Expenses extends State<Expenses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Account Note"),
+        actions: [
+          IconButton(
+              onPressed: () {
+                print("Hello?");
+              },
+              icon: const Icon(Icons.add))
+        ],
+      ),
       body: Column(
         children: [
           Text("Hello world!"),
