@@ -50,6 +50,16 @@ class _Expenses extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    Widget mainContent = const Center(
+      child: Text('No Expenses yet.'),
+    );
+
+    if (_registeredExpenses.isNotEmpty) {
+      mainContent = ExpensesList(
+        expenses: _registeredExpenses,
+        onRemoveExpense: _removeExpense,
+      );
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text("Account Note"),
@@ -62,12 +72,10 @@ class _Expenses extends State<Expenses> {
       ),
       body: Column(
         children: [
-          Text("Hello world!"),
+          const Text("Hello world!"),
           Expanded(
-              child: ExpensesList(
-            expenses: _registeredExpenses,
-            onRemoveExpense: _removeExpense,
-          ))
+            child: mainContent,
+          ),
         ],
       ),
     );
