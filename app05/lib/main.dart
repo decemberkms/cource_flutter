@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:app05/widget/expenses.dart';
 
-var kColorScheme = ColorScheme.fromSeed(seedColor: Colors.blue);
+var kColorScheme = ColorScheme.fromSeed(
+  seedColor: Color.fromARGB(255, 162, 201, 46),
+);
+var kDarkColorScheme = ColorScheme.fromSeed(
+  brightness: Brightness.dark,
+  seedColor: Color.fromARGB(255, 11, 38, 59),
+);
 
 void main() {
   runApp(
     MaterialApp(
+      darkTheme: ThemeData.dark()
+          .copyWith(useMaterial3: true, colorScheme: kDarkColorScheme),
       theme: ThemeData().copyWith(
         useMaterial3: true,
         colorScheme: kColorScheme,
@@ -29,6 +37,7 @@ void main() {
               ),
             ),
       ),
+      themeMode: ThemeMode.dark,
       home: const Expenses(),
     ),
   );
